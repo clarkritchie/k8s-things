@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
-# docker run --rm -p 9000:6000 -e FOO=baz hello-world-python:latest
-docker run --rm -p 9000:6000 -e FOO=baz clarkdritchie/hello-world-python:latest
+FROM=${1:-"local"}
+IMAGE="hello-world-python:latest"
+if [[ ${FROM} == "remote" ]]; then
+    IMAGE="clarkdritchie/${IMAGE}"
+fi
+
+docker run --rm -p 9000:6000 -e FOO=baz ${IMAGE}
