@@ -1,3 +1,5 @@
+# kubectl apply -f service.yaml
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -7,10 +9,14 @@ spec:
   selector:
     app: hello-world-python
   ports:
-  - port: 9000
-    targetPort: 6000
-    protocol: TCP
-  
+    - port: 9000
+      targetPort: 6000
+      protocol: TCP
+
+# get thhe port with:
+#   kubectl get svc hello-world-python-service-v1
+# then:
+#   curl localhost:31103
 ---
 apiVersion: v1
 kind: Service
@@ -24,3 +30,5 @@ spec:
     - port: 9001
       targetPort: 6000
   
+  # just:
+  #   curl localhost:8000
