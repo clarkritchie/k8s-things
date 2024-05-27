@@ -20,4 +20,5 @@ Hello, World!
 
 # LoadBalancer
 > curl localhost:9001  # this is the LoadBalancer
+Hello, World!
 ```
