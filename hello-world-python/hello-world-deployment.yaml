@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: hello-world-python-deployment
 spec:
-  replicas: 2 
+  replicas: 2
   selector:
     matchLabels:
       app: hello-world-python
@@ -25,4 +25,9 @@ spec:
         - containerPort: 6000
         env:
         - name: FOO
-          value: "K8s-BAR"
+          value: "K8s-FOO"
+        - name: BAR
+          valueFrom:
+            configMapKeyRef:
+              name: hello-world-config
+              key: BAR

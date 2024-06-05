@@ -1,12 +1,15 @@
 # Hello World Python
 
-- Just a hello world-level Flask app
-- A K8s deployment
-- 2 K8s services -- one is a `NodePort`, the other is `LoadBalancer`
+Just a hello world-level Flask app for use with Kubernetes on Docker Desktop.
+
+- ConfigMap
+- Deployment
+- 2 Services -- one is a `NodePort`, the other is `LoadBalancer`
 
 ```
-> kubectl apply -f deployment.yaml
-> kubectl apply -f service.yaml
+> kubectl apply -f hello-world-config.yaml
+> kubectl apply -f hello-world-deployment.yaml
+> kubectl apply -f hello-world-service.yaml
 
 # Get port details with either of these commands:
 > kubectl get all
