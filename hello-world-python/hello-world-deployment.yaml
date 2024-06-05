@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-app
-        image: clarkdritchie/hello-world-python:latest
+        image: clarkdritchie/hello-world-python:7
         resources:
           limits:
             memory: "32Mi"
