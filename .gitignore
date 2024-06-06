@@ -1,2 +1,6 @@
 **/.DS_Store
 hello-world-python/version.txt
+user-hasher/PLAN.md
+user-hasher/README.md
+**/__pycache__/
+**/.ruff_cache/

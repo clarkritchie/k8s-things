@@ -1,0 +1,31 @@
+# kubectl apply -f user-hasher-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-hasher
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-hasher
+  template:
+    metadata:
+      labels:
+        app: user-hasher
+    spec:
+      containers:
+      - name: user-hasher-container
+        image: clarkdritchie/user-hasher:latest
+        command: ["/entrypoint.sh"]
+        ports:
+        - containerPort: 8000
+        env:
+        - name: APP_VERSION
+          value: "localhost"
+        # - name: USER_SALT
+        #   value: "BAR"
+        - name: USER_SALT
+          valueFrom:
+            secretKeyRef:
+              name: user-salt
+              key: salt

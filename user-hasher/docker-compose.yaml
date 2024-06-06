@@ -1,0 +1,17 @@
+services:
+  user_hasher:
+    container_name: user_hasher
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      APP_VERSION: localhost
+      USER_SALT: ABC123
+      PROMETHEUS_PORT: localhost
+      PROMETHEUS_SERVER: 9091
+    ports:
+      - 8000:8000
+    # this works for hot code reload
+    volumes:
+      - ./user_hasher:/app/src
+    entrypoint: /entrypoint.sh
