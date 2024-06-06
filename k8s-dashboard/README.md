@@ -13,13 +13,17 @@
 ### Create service account, get token
 
 ```
-~> kubectl create serviceaccount kubernetes-dashboard -n kubernetes-dashboard~
-~> kubectl create token kubernetes-dashboard -n kubernetes-dashboard~
+# Nope!
+> kubectl create serviceaccount kubernetes-dashboard -n kubernetes-dashboard
+> kubectl create token kubernetes-dashboard -n kubernetes-dashboard
 
-> >kubectl apply -f dashboard-serviceaccount.yaml
+# Yup!
+> kubectl apply -f dashboard-serviceaccount.yaml
 > kubectl create token admin-user -n kubernetes-dashboard
 
 ```
+
+### Forward-n-go
 
 ```
 kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
