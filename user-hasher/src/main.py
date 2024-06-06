@@ -149,7 +149,7 @@ async def handle_metrics(
 @app.get("/joke")
 async def get_random_joke():
     cool_envs = ["dev", "localhost"]
-    if os.getenv("APP_VERSION").casefold() in cool_envs:
+    if APP_VERSION.casefold() in cool_envs:
         joke = pyjokes.get_joke()
         return {"joke": joke}
     else:

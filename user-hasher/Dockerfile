@@ -2,7 +2,7 @@ FROM python:3.10-alpine
 
 WORKDIR /src
 
-ADD user_hasher user_hasher
+COPY ./src/ /app/src
 ADD requirements requirements
 
 RUN pip install --upgrade pip wheel setuptools -r requirements/requirements-prod.txt

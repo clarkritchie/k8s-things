@@ -11,7 +11,7 @@ RUN pip install --upgrade pip wheel setuptools -r requirements/requirements-dev.
 # TODO we might want more debug mode functionality?
 # RUN pip install debugpy=
 
-COPY ./user_hasher/ /app/src
+COPY ./src/ /app/src
 COPY ./tests/ /app/tests
 COPY ./entrypoint_localhost.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
