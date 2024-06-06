@@ -2,9 +2,9 @@
 
 Just a hello world-level Flask app for use with Kubernetes on Docker Desktop.
 
-- ConfigMap
-- Deployment
-- 2 Services -- one is a `NodePort`, the other is `LoadBalancer`
+- `ConfigMap`
+- `Deployment`
+- 2 `Services` -- one is a `NodePort`, the other is `LoadBalancer`
 
 ```
 > kubectl apply -f hello-world-config.yaml
@@ -29,6 +29,7 @@ Hello, World!
 > curl localhost:9001  # this is the LoadBalancer
 Hello, World!
 ```
+
 ## K8s on Minikube
 
 ```
