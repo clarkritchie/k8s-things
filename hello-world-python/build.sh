@@ -9,6 +9,6 @@ BUILD_NUMBER=$((BUILD_NUMBER+1))
 echo "$BUILD_NUMBER" > "${VERSION_FILE}"
 echo "Build number incremented to: $BUILD_NUMBER"
 
-docker build -t hello-world-python:${BUILD_NUMBER} .
+docker build --platform linux/amd64 -t hello-world-python:${BUILD_NUMBER} .
 docker tag hello-world-python:${BUILD_NUMBER} clarkdritchie/hello-world-python:${BUILD_NUMBER}
 docker push clarkdritchie/hello-world-python:${BUILD_NUMBER}
